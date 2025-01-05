@@ -3,14 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table Fipe</title>
+    <title>FIPE Consultation</title>
 </head>
 <body>
     <header>
         <h1>Welcome to <strong>Table Fipe</strong></h1>
     </header>
     <main>
-        {% for  in  %}{% endfor %}
+        <div>
+            <form action="{% url "brand" %}" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="veiculos" class="form-label"> Select vehicle type: </label>
+                    <select name="veiculo">
+                        <option value="carros">
+                            Cars
+                        </option>
+                        <option value="motos">
+                            Mots
+                        </option>
+                        <option value="caminhoes">
+                            Burs
+                        </option>
+                    </select>
+                </div>
+                <button type="submit">Consultation</button>
+            </form>    
+        </div>
     </main>
 </body>
 </html>
