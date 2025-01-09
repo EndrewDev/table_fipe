@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+    <title>Consultation FIPE</title>
+</head>
+<body>
+    <div>
+        <h1>Brands of {{tyoe_vehicle}}</h1>
+        <ul>
+            {% for brand in list_brand %}
+                <li>
+                    <forn>
+                        {% csrf_token %}
+                    <input type="hidden" name="type_vehicle" value="{{type_vehicle}}">
+                    <input type="hidden" name="id_brand" value="{{brand.codigo}}">
+                    <input type="hidden" name="name_brand" value="{{brand.nome}}">
+                    <button type="submit">{{brand.nome}}</button>
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
