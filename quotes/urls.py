@@ -8,4 +8,10 @@ urlpatterns = [
     path(
         'brand/', views.brand, name='brands'
     ),
+    path(
+        "models/", views.models, name="models"
+    ),
+    path(
+        "yearmdoel/", views.models_years, name="vehicle-value"
+    ),
 ]

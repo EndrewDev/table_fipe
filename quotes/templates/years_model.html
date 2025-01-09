@@ -8,16 +8,18 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Brands of {{vehicle_type}}</h1>
+        <h1 class="text-center">Model of year {{nome_modelo}}</h1>
         <ul class="list-group">
-            {% for brand in list_brand %}
+            {% for year in list_years_model %}
                 <li class="list-group-item">
-                    <form action="{% url "models" %}" method='POST'>
+                    <form action={% url "vehicle-value" %} method='POST'>
                         {% csrf_token %}
-                        <input type="hidden" name="vehicle_type" value="{{vehicle_type}}">
-                        <input type="hidden" name="id_marca" value="{{brand.codigo}}">
-                        <input type="hidden" name="nome_marca" value="{{brand.nome}}">
-                        <button type='submit' class='btn btn-secondary'>{{brand.nome}}</button>
+                        <input type="hidden" name="tipo_veiculo" value="{{vehicle_type}}">
+                        <input type="hidden" name="id_marca" value="{{id_brand}}">
+                        <input type="hidden" name="id_modelo" value="{{id_model}}">
+                        <input type="hidden" name="id_ano" value="{{year.codigo}}">
+                        <input type="hidden" name="nome_ano" value="{{year.nome}}">
+                        <button type='submit' class='btn btn-secondary'>{{year.nome}}</button>
                     </form>
                 </li>
             {% endfor %}
