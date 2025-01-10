@@ -8,13 +8,13 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Brands of {{vehicle_type}}</h1>
+        <h1 class="text-center">Brands of {{vehicle_type}}</h1><br>
         <ul class="list-group">
             {% for brand in list_brand %}
                 <li class="list-group-item">
                     <form action="{% url "models" %}" method='POST'>
                         {% csrf_token %}
-                        <input type="hidden" name="vehicle_type" value="{{vehicle_type}}">
+                        <input type="hidden" name="vehicle_type" value="{{tipo_veiculo}}">
                         <input type="hidden" name="id_marca" value="{{brand.codigo}}">
                         <input type="hidden" name="nome_marca" value="{{brand.nome}}">
                         <button type='submit' class='btn btn-secondary'>{{brand.nome}}</button>

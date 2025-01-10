@@ -12,11 +12,11 @@
         <ul class="list-group">
             {% for year in list_years_model %}
                 <li class="list-group-item">
-                    <form action={% url "vehicle-value" %} method='POST'>
+                    <form action="" method='POST'>
                         {% csrf_token %}
-                        <input type="hidden" name="tipo_veiculo" value="{{vehicle_type}}">
-                        <input type="hidden" name="id_marca" value="{{id_brand}}">
-                        <input type="hidden" name="id_modelo" value="{{id_model}}">
+                        <input type="hidden" name="tipo_veiculo" value="{{tipo_veiculo}}">
+                        <input type="hidden" name="id_marca" value="{{id_marca}}">
+                        <input type="hidden" name="id_modelo" value="{{id_modelo}}">
                         <input type="hidden" name="id_ano" value="{{year.codigo}}">
                         <input type="hidden" name="nome_ano" value="{{year.nome}}">
                         <button type='submit' class='btn btn-secondary'>{{year.nome}}</button>

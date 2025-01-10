@@ -16,3 +16,4 @@ def years_models_constultation(vehicle_type:str, id_brand:str, id_models:str):
     formatted_address = f"{BASE_URL}/{vehicle_type}/marcas/{id_brand}/modelos/{id_models}/anos"
     response = requests.get(formatted_address)
     return response.json()
+
