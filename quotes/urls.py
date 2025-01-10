@@ -12,6 +12,6 @@ urlpatterns = [
         "models/", views.models, name="models"
     ),
     path(
-        "yearmdoel/", views.models_years, name="vehicle-value"
+        "yearmodel/", views.models_years, name="year"
     ),
 ]
