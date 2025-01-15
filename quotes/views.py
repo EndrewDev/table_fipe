@@ -44,7 +44,7 @@ def model_year_value(request):
     vehicle_type = request.POST.get("tipo_veiculo")
     id_brand = request.POST.get("id_marca")
     id_model = request.POST.get("id_modelo")
-    id_year = request.POST.get("id_year")
+    id_year = request.POST.get("id_ano")
 
     response = model_year_model_consultation(
         vehicle_type=vehicle_type, id_brand=id_brand, id_model=id_model, id_year=id_year
