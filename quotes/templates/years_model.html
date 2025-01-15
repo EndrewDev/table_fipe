@@ -8,11 +8,11 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">Model of year {{nome_modelo}}</h1>
+        <h1 class="text-center">Model of year {{name_model}}</h1>
         <ul class="list-group">
             {% for year in list_years_model %}
                 <li class="list-group-item">
-                    <form action="" method='POST'>
+                    <form action="modelyearvalue" method='POST'>
                         {% csrf_token %}
                         <input type="hidden" name="tipo_veiculo" value="{{vehicle_type}}">
                         <input type="hidden" name="id_marca" value="{{id_brand}}">

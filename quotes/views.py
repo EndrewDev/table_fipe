@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .services.api_clients.client import brand_consultation, models_consultation, years_models_constultation
+from .services.api_clients.client import brand_consultation, models_consultation, years_models_constultation, model_year_model_consultation
 # Create your views here.
 
 def home(request):
@@ -39,3 +39,17 @@ def models_years(request):
     return render(
         request, "years_model.html", {"vehicle_type": vehicle_type, "id_brand": id_brand, "name_model": name_model, "id_model": id_model, "list_years_model": response}
         )
+
+def model_year_value(request):
+    vehicle_type = request.POST.get("tipo_veiculo")
+    id_brand = request.POST.get("id_marca")
+    id_model = request.POST.get("id_modelo")
+    id_year = request.POST.get("id_year")
+
+    response = model_year_model_consultation(
+        vehicle_type=vehicle_type, id_brand=id_brand, id_model=id_model, id_year=id_year
+        )
+
+    return render(
+        request, "model_year_value.html", response
+    )

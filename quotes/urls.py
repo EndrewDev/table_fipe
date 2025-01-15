@@ -14,4 +14,7 @@ urlpatterns = [
     path(
         "yearmodel/", views.models_years, name="year"
     ),
+    path(
+        "modelyearvalue/", views.model_year_value, name="modelyearvalue"
+    ),
 ]
