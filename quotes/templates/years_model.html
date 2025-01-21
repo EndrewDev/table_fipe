@@ -12,7 +12,7 @@
         <ul class="list-group">
             {% for year in list_years_model %}
                 <li class="list-group-item">
-                    <form action="modelyearvalue" method='POST'>
+                    <form action="{% url 'modelyearvalue' %}" method='POST'>
                         {% csrf_token %}
                         <input type="hidden" name="tipo_veiculo" value="{{vehicle_type}}">
                         <input type="hidden" name="id_marca" value="{{id_brand}}">

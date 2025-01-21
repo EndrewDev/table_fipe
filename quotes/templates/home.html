@@ -9,7 +9,7 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center">Consultation FIPE</h1>
-        <form action="{% url "brands" %}" method="POST">
+        <form action="{% url 'brands' %}" method="POST">
             {% csrf_token %}
             <div class="mb-3">
                 <label for="veiculo" class="form-label">Select the vehicle type:</label>

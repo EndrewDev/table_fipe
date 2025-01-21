@@ -12,7 +12,7 @@
         <ul class="list-group">
             {% for brand in list_brand %}
                 <li class="list-group-item">
-                    <form action="{% url "models" %}" method='POST'>
+                    <form action="{% url 'models' %}" method='POST'>
                         {% csrf_token %}
                         <input type="hidden" name="vehicle_type" value="{{vehicle_type}}">
                         <input type="hidden" name="id_marca" value="{{brand.codigo}}">
